@@ -9,13 +9,15 @@
 }
 
 .sidebar-section {
+    border-right: 1px solid black;
     grid-area: side-bar;
     display: flex;
     flex-direction: column;
     justify-items: end;
-    padding: 1.5rem 0rem;
+    padding-bottom: 1.5rem;
 
     &>.sidebar-web-title {
+        height: 80px;
         flex: 1;
         display: flex;
         flex-direction: row;
@@ -28,8 +30,8 @@
 
             &>.circle-picture {
                 background-color: gray;
-                width: 80px;
-                height: 80px;
+                width: 60px;
+                height: 60px;
                 border-radius: 50%;
             }
 
@@ -74,13 +76,47 @@
                 flex-direction: row;
                 gap: 1rem;
             }
-        } 
+        }
     }
 }
 
 .nav-bar {
     grid-area: nav-bar;
-    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0rem 2rem;
+    justify-content: space-between;
+    gap: 2rem;
+
+    &>.icon-hamburger {}
+
+    &>.search {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+
+        &>input {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            width: 100%;
+            height: 50px;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+    }
+
+    &>.profile {
+
+
+        &>.circle-picture {
+            background-color: gray;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+    }
 }
 
 .content-section {
