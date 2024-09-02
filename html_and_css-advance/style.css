@@ -12,8 +12,8 @@
     grid-area: side-bar;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    width: 100%;
+    justify-items: end;
+    padding: 1.5rem 0rem;
 
     &>.sidebar-web-title {
         flex: 1;
@@ -22,6 +22,7 @@
         align-items: center;
         justify-content: center;
         gap: 1rem;
+        padding: 0rem 2rem;
 
         &>.sidebar-web-picture {
 
@@ -37,13 +38,43 @@
     }
 
     &>.sidebar-menu-item {
-        background-color: beige;
         flex: 6;
+        padding: 0rem 2rem;
+
+
+        &>ul {
+            display: flex;
+            flex-direction: column;
+            padding-top: 3rem;
+            gap: 2rem;
+
+            &>li {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+        }
     }
 
     &>.sidebar-footer {
-        background-color: white;
+        padding: 0rem 2rem;
+        border-top: 1px solid black;
         flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: end;
+
+        &>ul {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+
+            &>li {
+                display: flex;
+                flex-direction: row;
+                gap: 1rem;
+            }
+        } 
     }
 }
 
