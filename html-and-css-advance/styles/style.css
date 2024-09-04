@@ -1,15 +1,24 @@
+.bg-color{
+    background-color: #fcfcfc;
+}
+
 .grid-container-layout {
+    background-color: white;
     display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 1fr 4fr;
     grid-template-rows: 80px 9fr;
     grid-template-areas:
         "side-bar nav-bar"
         "side-bar content-section";
+
+    max-width: 1440px;
+    margin: 0 auto;
 }
 
+
+
 .sidebar-section {
-    border-right: 1px solid black;
+    border-right: 1px solid #F0F0F0;
     grid-area: side-bar;
     display: flex;
     flex-direction: column;
@@ -36,6 +45,11 @@
 
         }
 
+        &>.sidebar-web-name {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+
     }
 
     &>.sidebar-menu-item {
@@ -52,15 +66,21 @@
             &>li {
                 display: flex;
                 flex-direction: row;
+                align-items: center;
                 gap: 1rem;
+                font-size: 1.25rem;
+
+                &>.material-symbols-outlined{
+                    font-size: 2rem;
+                }
             }
         }
     }
 
     &>.sidebar-footer {
         padding: 0rem 2rem;
-        border-top: 1px solid black;
-        flex: 1;
+        border-top: 1px solid #F0F0F0;
+        flex: 1.25;
         display: flex;
         flex-direction: column;
         justify-content: end;
@@ -74,6 +94,12 @@
                 display: flex;
                 flex-direction: row;
                 gap: 1rem;
+                align-items: center;
+                font-size: 1.25rem;
+
+                &>.material-symbols-outlined{
+                    font-size: 2rem;
+                }
             }
         }
     }
@@ -88,7 +114,12 @@
     justify-content: space-between;
     gap: 2rem;
 
-    &>.icon-hamburger {}
+    &>.icon-hamburger {
+        .material-symbols-outlined{
+            font-size: 2rem;
+        }
+        
+    }
 
     &>.search {
         flex: 1;
@@ -96,7 +127,7 @@
         justify-content: center;
 
         &>input {
-            border: 1px solid black;
+            border: 1px solid #EEEEEE;
             border-radius: 10px;
             padding: 10px;
             width: 100%;
@@ -122,6 +153,7 @@
     grid-area: content-section;
     padding: 0rem 2rem;
     padding-top: 3rem;
+    padding-bottom: 1.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -135,7 +167,28 @@
             display: flex;
             flex-direction: row;
             gap: 1rem;
+            align-items: center;
+
+            &>.icon {
+                border-radius: 5px;
+
+                &>.material-symbols-outlined{
+                    font-size: 2rem;
+                    background-color: #627AEC;
+                    border-radius: 6px;
+                    padding: 2px;
+                    color: white;
+
+                }
+                
+            }
+
+            &>.name {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
         }
+
 
         &>.content {
             display: flex;
@@ -143,7 +196,7 @@
             gap: 2rem;
 
             &>.total-likes {
-                background-color: skyblue;
+                background-color: #CDDFFC;
                 width: 100%;
                 height: 200px;
                 border-radius: 15px;
@@ -152,10 +205,25 @@
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
+
+                &>.icon{
+                    &>.material-symbols-outlined{
+                        font-size: 2.5rem;
+                    }
+                }
+
+                &>.name{
+                    font-size: 1.25rem;
+                    
+                }
+
+                &>.value{
+                    font-size: 3rem;
+                }
             }
 
             &>.comments {
-                background-color: rgb(255, 255, 227);
+                background-color: #FCF3DB;
                 width: 100%;
                 height: 200px;
                 border-radius: 15px;
@@ -164,11 +232,26 @@
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
+
+                &>.icon{
+                    &>.material-symbols-outlined{
+                        font-size: 2.5rem;
+                    }
+                }
+
+                &>.name{
+                    font-size: 1.25rem;
+                    
+                }
+
+                &>.value{
+                    font-size: 3rem;
+                }
 
             }
 
             &>.total-share {
-                background-color: plum;
+                background-color: #ECE2FB;
                 width: 100%;
                 height: 200px;
                 border-radius: 15px;
@@ -177,6 +260,21 @@
                 justify-content: center;
                 align-items: center;
                 gap: 1rem;
+
+                &>.icon{
+                    &>.material-symbols-outlined{
+                        font-size: 2.5rem;
+                    }
+                }
+
+                &>.name{
+                    font-size: 1.25rem;
+                    
+                }
+
+                &>.value{
+                    font-size: 3rem;
+                }
 
             }
         }
@@ -193,10 +291,26 @@
             display: flex;
             flex-direction: row;
             gap: 1rem;
+            align-items: center;
 
-            &>.icon {}
+            &>.icon {
+                border-radius: 5px;
 
-            &>.name {}
+                &>.material-symbols-outlined{
+                    font-size: 2rem;
+                    background-color: #627AEC;
+                    border-radius: 6px;
+                    padding: 2px;
+                    color: white;
+
+                }
+                
+            }
+
+            &>.name {
+                font-size: 1.5rem;
+                font-weight: bold;
+            }
 
         }
 
@@ -205,14 +319,22 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            overflow: auto;
+            height: calc(100vh - 525px);
 
             &>table {
                 width: 100%;
+                height: 100;
+                overflow: auto;
             }
             
             th {
                 font-weight: bold;
                 text-align: left;
+                position: sticky;
+                top: 0;
+                z-index: 1;
+                background-color: white;
             }
             
             th, td {
@@ -221,4 +343,6 @@
         }
     }
 }
+
+
 
